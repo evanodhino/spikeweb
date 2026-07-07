@@ -1,0 +1,29 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="spikeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b6bff"/>
+      <stop offset="100%" stop-color="#2fd8e0"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Fond carré arrondi sombre -->
+  <rect x="0" y="0" width="400" height="400" rx="72" fill="#10131f"/>
+  <rect x="1" y="1" width="398" height="398" rx="71" fill="none" stroke="#232a3d" stroke-width="1"/>
+
+  <!-- Pic / spike stylisé -->
+  <g filter="url(#glow)">
+    <path d="M200 90 L245 210 L200 195 L155 210 Z" fill="url(#spikeGradient)"/>
+    <path d="M200 195 L245 210 L215 310 Z" fill="#2fd8e0" opacity="0.85"/>
+    <path d="M200 195 L155 210 L185 310 Z" fill="#8b6bff" opacity="0.85"/>
+  </g>
+
+  <!-- Petit point lumineux au sommet -->
+  <circle cx="200" cy="90" r="6" fill="#2fd8e0" filter="url(#glow)"/>
+</svg>
